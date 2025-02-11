@@ -1,1 +1,12 @@
 # Stock-price-detection-and-recomendation-using-ML-and-LLM-
+
+This project combines two powerful functionalities in a web application: a **Stock Price Prediction** system using a Machine Learning (ML) model and a **Stock Recommendation System** powered by an intelligent Langchain chatbot. The prediction system forecasts future stock prices based on historical data, helping users make informed decisions about their investments. The recommendation system, on the other hand, uses a chatbot built with Langchain that incorporates **Retrieval-Augmented Generation (RAG)** and **vector search** to provide personalized stock recommendations. These features leverage **MongoDB** to store stock data and allow for efficient vector search retrieval.
+
+
+The application features a **Stock Price Prediction** tool where users can input a stock symbol and receive a forecasted price based on past performance. For those seeking guidance on which stocks to invest in, the **Stock Recommendation System** comes into play. This system utilizes a Langchain chatbot, which processes user queries using **Large Language Models (LLM)** and **RAG** techniques to provide tailored recommendations. By utilizing vector search in MongoDB, the chatbot can efficiently find and return the most relevant information for users based on their preferences and the latest market trends.
+
+
+The application incorporates **Machine Learning models** trained on historical stock data for price prediction. The chatbot’s recommendation engine leverages **Langchain** to process natural language queries and retrieve the most relevant stock data from the **MongoDB** database using vector embeddings, enabling personalized stock recommendations. 
+
+
+Overall, this project represents a significant advancement in integrating machine learning with natural language processing to assist individuals in navigating the complexities of the stock market. It effectively combines real-time stock predictions with intelligent, personalized recommendations, providing users with actionable insights and guidance. By harnessing the power of both predictive modeling and conversational AI, this system offers a seamless and interactive way for users to stay informed and make data-driven decisions about their investments, setting the stage for future enhancements such as incorporating more data sources, improving model accuracy, and expanding the system's capabilities.
