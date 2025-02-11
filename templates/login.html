@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login</title>
+
+    <style>
+        body {
+            background: #191919;
+        }
+
+        .container-flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container1 {
+            background: #0d0d0d;
+            height: 100%;
+            width: 60%;
+            box-shadow: rgba(12, 12, 19, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .container2 {
+            padding: 100px;
+            height: 100%;
+            width: 40%;
+        }
+
+        .form {
+            gap: 10px;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-bottom: 0.4em;
+            border-radius: 25px;
+            width: 30%;
+            height: 75%;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            color: #e8e8e8;
+        }
+
+        .input {
+            max-width: 350px;
+            height: 40px;
+            border: 2px solid transparent;
+            outline: none;
+            border-bottom: 2px solid #3f3f3f;
+            caret-color: #3f3f3f;
+            color: #e8e8e8;
+            background-color: #212121;
+            padding: 5px;
+            transition: .5s linear;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .input:focus {
+            border: 2px solid #e8e8e8;
+            caret-color: #e8e8e8;
+            color: #e8e8e8;
+            box-shadow: 4px 4px 10px #070707;
+        }
+
+        .input:focus::placeholder {
+            color: #e8e8e8;
+        }
+
+        .input:valid {
+            color: #e8e8e8;
+            border: 2px solid #e8e8e8;
+            caret-color: #e8e8e8;
+            box-shadow: 4px 4px 10px #070707;
+        }
+
+        .submit-bt {
+            background-color: #e8e8e8;
+            border: 2px solid #e8e8e8;
+            height: 40px;
+            width: 90%;
+            transition: .5s linear;
+        }
+
+        .submit-bt:hover {
+            transform: scale(100%);
+            box-shadow: 4px 4px 10px #070707;
+        }
+
+        h1 {
+            color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-flex">
+        <div class="container1">
+            <img src="./static/img1.png" width="100%" height="750px">
+        </div>
+        <div class='container2'>
+            <h1>Welcome back!</h1><br>
+            <form action="/start/dashboard" method="POST">
+                <div class="input-group">
+                    <p style="color:rgb(159, 10, 10)">{{ err }}</p>
+                    <p>Enter username</p>
+                    <input placeholder="Username" class="input" name="username" type="text" required><br>
+                    <p>Enter password</p>
+                    <input placeholder="Password" class="input" name="password" type="password" required><br><br>
+                    <input type="submit" class="submit-bt" value="Login!">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2RoiV8/j1AnmZ6S3mZ5Qnf1/RhLlRhsYND18JzZpyzBqtQn0hA2v9KbySM5" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!-- 
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Stock Market Predictor - India</title>
+     <style>
+         body {
+             background: #191919;
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+         }
+ 
+         .container-flex {
+             display: flex;
+             flex-direction: row;
+             height: 100vh;
+         }
+ 
+         .container1 {
+             background: #0d0d0d;
+             width: 60%;
+             box-shadow: rgba(12, 12, 19, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+ 
+         .container2 {
+             width: 40%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+ 
+         .form {
+             background-color: #0d0d0d;
+             gap: 10px;
+             padding: 2em;
+             border-radius: 25px;
+             width: 80%;
+             box-shadow: rgba(12, 12, 19, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+         }
+ 
+         .input-group {
+             display: flex;
+             flex-direction: column;
+         }
+ 
+         p {
+             color: #e8e8e8;
+         }
+ 
+         .input {
+             max-width: 350px;
+             height: 40px;
+             border: 2px solid transparent;
+             outline: none;
+             border-bottom: 2px solid #3f3f3f;
+             caret-color: #3f3f3f;
+             color: #e8e8e8;
+             background-color: #212121;
+             padding: 5px;
+             transition: .5s linear;
+             font-family: monospace;
+             letter-spacing: 1px;
+         }
+ 
+         .input:focus {
+             border: 2px solid #e8e8e8;
+             caret-color: #e8e8e8;
+             color: #e8e8e8;
+             box-shadow: 4px 4px 10px #070707;
+         }
+ 
+         .input:focus::placeholder {
+             color: #e8e8e8;
+         }
+ 
+         .input:valid {
+             color: #e8e8e8;
+             border: 2px solid #e8e8e8;
+             caret-color: #e8e8e8;
+             box-shadow: 4px 4px 10px #070707;
+         }
+ 
+         .submit-bt {
+             background-color: #e8e8e8;
+             border: 2px solid #e8e8e8;
+             height: 40px;
+             width: 90%;
+             transition: .5s linear;
+             color: #191919;
+             font-weight: bold;
+             cursor: pointer;
+         }
+ 
+         .submit-bt:hover {
+             transform: scale(100%);
+             box-shadow: 4px 4px 10px #070707;
+         }
+ 
+         h1 {
+             color: #e8e8e8;
+         }
+ 
+         /* Navigation Bar */
+         .navbar {
+             display: flex;
+             justify-content: space-between;
+             padding: 20px;
+             background-color: #162447;
+             color: #ffd700;
+         }
+ 
+         .navbar h1 {
+             font-size: 24px;
+         }
+ 
+         .navbar nav a {
+             color: #ffd700;
+             margin-left: 15px;
+             text-decoration: none;
+             font-weight: bold;
+         }
+ 
+         .navbar nav a:hover {
+             color: #ffcc00;
+         }
+ 
+         /* Main Section */
+         main {
+             padding: 40px;
+             text-align: center;
+         }
+ 
+         .welcome h2 {
+             font-size: 36px;
+             color: #ffd700;
+         }
+ 
+         .welcome p {
+             font-size: 20px;
+             margin: 10px 0 30px;
+             color: #ffdf80;
+         }
+ 
+         /* About Section */
+         .about {
+             margin: 20px auto;
+             max-width: 600px;
+             padding: 20px;
+             background-color: #0f3460;
+             border-radius: 8px;
+         }
+ 
+         .about h3 {
+             color: #ffd700;
+         }
+ 
+         .buttons-container {
+             display: flex;
+             justify-content: center;
+             gap: 40px;
+             margin-top: 30px;
+         }
+ 
+         .button-card {
+             background-color: #162447;
+             padding: 20px;
+             border-radius: 8px;
+             width: 250px;
+             text-align: center;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+         }
+ 
+         .button-card h4 {
+             color: #ffcc00;
+             margin-bottom: 10px;
+         }
+ 
+         .button-card p {
+             color: #e0e0e0;
+             font-size: 16px;
+             margin-bottom: 20px;
+         }
+ 
+         .button-card button {
+             background-color: #ffcc00;
+             border: none;
+             padding: 10px 20px;
+             border-radius: 5px;
+             cursor: pointer;
+             font-weight: bold;
+             color: #162447;
+             transition: background-color 0.3s;
+         }
+ 
+         .button-card button:hover {
+             background-color: #ffd700;
+         }
+     </style>
+ </head>
+ <body>
+     <header class="navbar">
+         <h1>Stock Market Predictor - India</h1>
+         <nav>
+             <a href="#">Home</a>
+             <a href="#">Stock Prediction</a>
+             <a href="/start/login">Logout</a>
+         </nav>
+     </header>
+     <main>
+         <section class="welcome">
+             <h2>Welcome to Stock Market Predictor</h2>
+             <p>Empowering investors with AI-driven insights and Indian stock market recommendations.</p>
+         </section>
+         <section class="about">
+             <h3>About Indian Stock Market</h3>
+             <p>
+                 The Indian stock market operates mainly through two stock exchanges: NSE (National Stock Exchange) and BSE (Bombay Stock Exchange). It offers a wide range of opportunities for trading stocks, bonds, derivatives, and commodities.
+             </p>
+             <p>
+                 Our platform provides AI-based predictions and real-time insights to help investors make informed decisions regarding the Indian stock market.
+             </p>
+         </section>
+         <section class="buttons-container">
+             <div class="button-card">
+                 <h4>Stock Market Prediction</h4>
+                 <p>Predict future stock prices using machine learning algorithms tailored for Indian stocks.</p>
+                 <a href="/predict"><button>Predict Stock</button></a>
+             </div>
+             <div class="button-card">
+                 <h4>Stock Market Information</h4>
+                 <p>Ask the AI about real-time stock news, recommendations, and insights for Indian stocks.</p>
+                 <button>Start Chat</button>
+             </div>
+         </section>
+     </main>
+ </body>
+ </html>
+  -->

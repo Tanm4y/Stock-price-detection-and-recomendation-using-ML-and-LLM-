@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Crypto Prediction</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: Arial, sans-serif;
+ }
+ body {
+ background-color: #191919;
+ color: #f5f5f5;
+ }
+ .navbar {
+ display: flex;
+ justify-content: space-between;
+ padding: 20px;
+ background-color: #019695;
+ color: white;
+ }
+ .navbar h1 {
+ font-size: 24px;
+ display: flex;
+ align-items: center;
+ }
+ .navbar nav a {
+ color: white;
+ margin-left: 15px;
+ text-decoration: none;
+ font-weight: bold;
+ }
+ .navbar nav a:hover {
+ color: white;
+ }
+ main {
+ padding: 40px;
+ text-align: center;
+ }
+ h1 {
+ font-size: 36px;
+ color: white;
+ margin-bottom: 30px;
+ display: flex;
+ align-items: center;
+ }
+ h1 a {
+ color: white;
+ text-decoration: none;
+ margin-right: 10px;
+ }
+ h1 a:hover {
+ color: white;
+ }
+ form {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-bottom: 40px;
+ }
+ label {
+ color: #f5f5f5;
+ margin-bottom: 10px;
+ }
+ input {
+ padding: 10px;
+ width: 200px;
+ margin-bottom: 20px;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+ background-color: #191919;
+ color: #f5f5f5;
+ }
+ button {
+ background-color: white;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ font-weight: bold;
+ color: #162447;
+ transition: background-color 0.3s;
+ }
+ button:hover {
+ background-color: white;
+ }
+ .result {
+ margin-top: 30px;
+ text-align: center;
+ color: white;
+ }
+ .result h2 {
+ font-size: 24px;
+ }
+ .result p {
+ font-size: 20px;
+ }
+ .error {
+ color: #ff6b6b;
+ text-align: center;
+ font-size: 18px;
+ }
+ </style>
+</head>
+<body>
+ <header class="navbar">
+ <h1><a href="/start"><i class="fas fa-arrow-left"></i></a>Cryptocurrency Prediction</h1>
+ <nav>
+ <a href="/home">Back</a>
+ </nav>
+ </header>
+
+ <main>
+ <form action="{{ url_for('predict') }}" method="POST">
+ <label for="symbol">Enter Cryptocurrency Symbol (e.g., BTC-USD):</label>
+ <input type="text" id="symbol" name="symbol" required>
+ <button type="submit">Predict</button>
+ </form>
+
+ {% if error %}
+ <div class="error">
+ <p>{{ error }}</p>
+ </div>
+ {% endif %}
+
+ {% if prediction %}
+ <div class="result">
+ <h2>Prediction for {{ prediction.symbol }}:</h2>
+ <p>Date: {{ prediction.date }}</p>
+ <p>Predicted Closing Price: Rs.{{ prediction.predicted_price }}</p>
+ </div>
+ {% endif %}
+ </main>
+</body>
+</html>
